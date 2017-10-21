@@ -10,11 +10,14 @@
         </div>  
         <% if pin.user == current_user %>
           <div class="panel-footer">
-            <%= link_to 'Edit', edit_pin_path(pin) %>
-            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+            <%= link_to 'Edit', edit_pin_path(pin),class:'btn btn-primary' %>
+            <%= link_to 'Destroy', pin, method: :delete,class:'btn btn-danger', data: { confirm: 'Are you sure?' } %></br>
           </div>
         <% end %>
       </div>
     </div>
   <% end %>
+</div>
+<div class="center">
+<%= will_paginate @pins,renderer: BootstrapPagination::Rails %>
 </div>
